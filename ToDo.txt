@@ -1,0 +1,11 @@
+Order Items (11/14)
+- Micro-USB data cable
+- 5V/4A barral jack power supply
+
+Self Assessment Form (Thanksgiving Break)
+
+Datasheet Assignment (End of Semester)
+- Technical description of the project so that we can troubleshoot or re-build based on the datasheet 
+- Hardware specs
+- Logic of code
+
