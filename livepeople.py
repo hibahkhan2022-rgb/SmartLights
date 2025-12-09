@@ -1,5 +1,5 @@
-from jetson_inference import detectNet
-from jetson_utils import videoSource, videoOutput
+from jetson-inference import detectNet
+from jetson-utils import videoSource, videoOutput
 
 net = detectNet("ssd-mobilenet-v2", threshold=0.5)
 camera = videoSource("csi://0")      # '/dev/video0' for V4L2
