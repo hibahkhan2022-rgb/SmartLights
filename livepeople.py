@@ -1,6 +1,6 @@
+import Jetson.GPIO as GPIO
 from jetson_inference import detectNet
 from jetson_utils import videoSource, videoOutput
-import Jetson.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
 LED_PIN = 18
