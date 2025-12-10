@@ -8,10 +8,24 @@ display = videoOutput("display://0") # 'my_video.mp4' for file
 while display.IsStreaming():
     img = camera.Capture()
 
-    if img is None: # capture timeout
+    if img is None:
         continue
 
     detections = net.Detect(img)
     
+    # ----- PERSON CHECK -----
+    person_detected = False
+    for d in detections:
+        if d.ClassID == 1:   # 1 = person
+            person_detected = True
+            break
+
+    # ----- LED CONTROL -----
+    if person_detected:
+        GPIO.output(LED_PIN, GPIO.HIGH)
+    else:
+        GPIO.output(LED_PIN, GPIO.LOW)
+
+    # ----- DISPLAY -----
     display.Render(img)
     display.SetStatus("Object Detection | Network {:.0f} FPS".format(net.GetNetworkFPS()))
