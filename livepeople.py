@@ -1,5 +1,5 @@
-from jetson.inference import detectNet
-from jetson.utils import videoSource, videoOutput
+from jetson_inference import detectNet
+from jetson_utils import videoSource, videoOutput
 import Jetson.GPIO as GPIO
 
 GPIO.setmode(GPIO.BOARD)
