@@ -1,5 +1,11 @@
 from jetson.inference import detectNet
 from jetson.utils import videoSource, videoOutput
+import Jetson.GPIO as GPIO
+
+GPIO.setmode(GPIO.BOARD)
+LED_PIN = 18
+GPIO.setup(LED_PIN, GPIO.OUT)
+GPIO.output(LED_PIN, GPIO.LOW)
 
 net = detectNet("ssd-mobilenet-v2", threshold=0.5)
 camera = videoSource("csi://0")      # '/dev/video0' for V4L2
